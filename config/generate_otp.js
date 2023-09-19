@@ -12,7 +12,7 @@ module.exports.genOtp = async(res, phone) => {
     client.messages
     .create({
       body: `Your OTP is: ${otp}`,
-      from: '+14705180842',
+      from: TWILIO_PHONE_NUMBER,
       to: mobNumber,
     })
     .then(() => {
