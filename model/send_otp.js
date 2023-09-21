@@ -11,6 +11,13 @@ const sendOtpSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  // auto deleting the otp after 5 minutes(300 seconds)
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    index: { expires: 300 }
+  }
 });
 
 const sendOtp = mongoose.model("sendOtp", sendOtpSchema);
