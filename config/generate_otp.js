@@ -16,11 +16,11 @@ module.exports.genOtp = async(res, phone) => {
       to: mobNumber,
     })
     .then(() => {
-      res.json({ message: 'OTP sent successfully' });
+      return res.json({ message: 'OTP sent successfully' });
     })
     .catch((error) => {
       console.error(error);
-      res.status(500).send('Error sending OTP');
+      return res.status(500).send('Error sending OTP');
     });
     return otp;
 }

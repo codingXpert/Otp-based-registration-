@@ -1,5 +1,4 @@
 const ipInfo = require("ipinfo");
-const axios = require("axios");
 const { response } = require("express");
 
 module.exports.userIp = async(req, res) => { 
